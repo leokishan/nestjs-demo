@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { DbModelsModule } from 'src/db-models/db-models.module';
+import { DbModelsModule } from '../db-models/db-models.module';
 import { SubscriptionController } from './subscription.controller';
 import { SubscriptionService } from './subscription.service';
 

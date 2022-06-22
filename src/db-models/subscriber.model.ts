@@ -1,26 +1,27 @@
-import { Column, Model, Table, Index, PrimaryKey } from 'sequelize-typescript';
+import { Column, BaseEntity, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Table({ tableName: 'arr_subscribers', createdAt: false, updatedAt: false })
-export class Subscriber extends Model {
-  @PrimaryKey
-  @Column({ allowNull: false, autoIncrement: true, primaryKey: true })
+@Entity({ name: 'arr_subs' })
+export class Subscriber {
+  // @Column()
+  // @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   id: number;
 
-  @Column
+  @Column()
   email: string;
 
-  @Column
+  @Column()
   verifiedEmail: boolean;
 
-  @Column
+  @Column()
   subscriberName: string;
 
-  @Column
+  @Column()
   country: string;
 
-  @Column
+  @Column()
   frequency: string;
 
-  @Column
+  @Column()
   subscriptionTime: string;
 }

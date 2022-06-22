@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { Subscriber } from 'src/db-models/subscriber.model';
+import { Subscriber } from '../db-models/subscriber.model';
 import { CreateSuscriberDto } from './dto/CreateSubscriber.dto';
 import { SubscriptionService } from './subscription.service';
 
