@@ -1,33 +1,37 @@
 name: Nest Application
 on: [push]
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - name: Code pushed on
         run: echo "Code ${{ github.event_name }} on ${{ github.ref_name }}"
       - name: Checkout to branch
-        run: echo "Checkout to branch"
+        uses: actions/checkout@v3
       - name: Install node
-        run: echo "Install node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12.x
       - name: Install dependencies
-        run: echo "Install dependencies"
+        run: npm install
       - name: Build code
-        run: echo "Build code"
+        run: npm run build
       - name: Build successful
         run: echo "Build successful"
-  test:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - name: Code pushed on
-        run: echo "Code pushed on"
+        run: echo "Code ${{ github.event_name }} on ${{ github.ref_name }}"
       - name: Checkout to branch
-        run: echo "Checkout to branch"
+        uses: actions/checkout@v3
       - name: Install node
-        run: echo "Install node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12.x
       - name: Install dependencies
-        run: echo "Install dependencies"
+        run: npm install
       - name: Test code
-        run: echo "Test code"
+        run: npm run test
       - name: Test successful
         run: echo "Test successful"
