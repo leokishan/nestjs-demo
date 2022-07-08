@@ -1,14 +1,11 @@
 name: Nest Application
 on: [push]
-env:
-  event: ${{ github.event_name }}
-  branch: ${{ github.ref_name }}
 jobs:
   build:
     runs_on: ubuntu-latest
     steps:
       - name: Code pushed on
-        run: echo "Code pushed on"
+        run: echo "Code ${{ github.event_name }} on ${{ github.ref_name }}"
       - name: Checkout to branch
         run: echo "Checkout to branch"
       - name: Install node
