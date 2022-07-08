@@ -2,7 +2,7 @@ name: Nest Application
 on: [push]
 jobs:
   build:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Code pushed on
         run: echo "Code ${{ github.event_name }} on ${{ github.ref_name }}"
@@ -17,7 +17,7 @@ jobs:
       - name: Build successful
         run: echo "Build successful"
   test:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Code pushed on
         run: echo "Code pushed on"
