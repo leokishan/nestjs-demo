@@ -12,6 +12,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 12.x
+          cache: "npm"
       - name: Install dependencies
         run: npm install
       - name: Build code
@@ -20,6 +21,7 @@ jobs:
         run: echo "Build successful"
   Test:
     runs-on: ubuntu-latest
+    needs: Build
     steps:
       - name: Code pushed on
         run: echo "Code ${{ github.event_name }} on ${{ github.ref_name }}"
@@ -29,6 +31,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 12.x
+          cache: "npm"
       - name: Install dependencies
         run: npm install
       - name: Test code
