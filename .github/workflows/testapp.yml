@@ -1,9 +1,9 @@
 name: Nest Application
 on: [push]
+env:
+  event: ${{ github.event_name }}
+  branch: ${{ github.ref_name }}
 jobs:
-  env:
-    event: ${{ github.event_name }}
-    branch: ${{ github.ref_name }}
   build:
     runs_on: ubuntu-latest
     steps:
